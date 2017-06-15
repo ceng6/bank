@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>贷款定价</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading scripts] -->
+
+
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+                 <!-- .menu -->
+            </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                            <img src="img/icons/menu.png" alt="menu" />
+                        </a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>贷款定价</h1>
+                    </div>
+                </section> <!-- #header -->
+                <!--搜索框-->
+                <div class="search bar7">
+                    <form>
+                        <input type="text" id="dat" placeholder="输入定价单号/客户姓名" class="text1" />
+                        <input type="button" value="搜索" class="search-bar7-form-btn" id="btn" />
+                    </form>
+                </div>
+
+        		<!-- <section id="content">
+
+                </section>   --><!-- #content -->
+
+            </section> <!-- #content-wrapper -->
+
+            <div class="houtai-footer-ding">
+                <a href="#">
+                    <img src="img/img1/shang.png" alt="回到顶部">
+                </a>
+            </div><!--回到顶部-->
+
+
+    	</section> <!-- #page-wrapper -->
+
+        <div class="houtai-footer1"></div>
+        <div class="houtai-footer">
+           <ul class="houtai-box">
+
+           </ul>
+        </div>
+
+    </body>
+     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/foot.js"></script>
+    <script type="text/javascript">
+        $(function (){
+                      if($('#page-wrapper').height()<$(window).height()){
+                     $('#page-wrapper').height($(window).height())
+                 }
+			var params = getCommonParams(document.cookie);
+			params.class = "commonPricingBill";
+            function search(){
+                       if($("#dat").val().length==0){
+                            $(".content-wrapper-div").show();
+                       }else{
+                            $(".content-wrapper-div").hide().filter(":contains('"+$("#dat").val()+"')").show();
+                       }
+            }
+            $("#btn").click(function(){
+                search();
+            });
+            $("#dat").on('keyup',function(){
+                search();
+            });
+
+			$.ajax({
+				url:port,
+				data:params,
+				dataType:'json',
+				cache:false,
+				success:function(r){
+					if (r.status){
+						$.each(r.result,function(i,v){
+
+							$('<div class="content-wrapper-div">'
+								+'<ul>'
+									+'<li>定价单号：<span>'+v.lps_sht_id+'</span></li>'
+									+'<li>客户名称：<span>'+v.lps_bs_cust_name+'</span></li>'
+									+'<li>客户号：<span>'+v.lps_bs_cust_id+'</span></li>'
+									+'<li>贷款种类: <span>'+v.lps_ln_product_name+'</span></li>'
+									+'<li>金额：<span>'+v.lps_ln_used_bal+'</span></li>'
+									+'<li>期限：<span>'+v.lps_ln_term+'</span></li>'
+									+'<li>底线利率(%)：<span>'+v.lps_rt_bottom_price+'</span></li>'
+									+'<li>目标利率(%)：<span>'+v.lps_rt_target_price+'</span></li>'
+									+'<li>优惠利率(%)：<span>'+v.lps_rt_favor_price+'</span></li>'
+									+'<li>执行利率(%)：<span>'+v.lps_rt_strike_price+'</span></li>'
+									+'<li>&nbsp状态&nbsp：<span>'+v.lps_bs_status_name+'</span></li>'
+								+'</ul>'
+							+'</div>').appendTo('#content-wrapper');
+                               var isFocus=$("#dat").is(":focus");
+                                if(true==isFocus){
+                                    $(".content-wrapper-div").show();
+                                }else{
+                                    $(".content-wrapper-div").hide().filter(":contains('"+$("#dat").val()+"')").show();
+                                }
+						});
+                        $("#content-wrapper").on('click','.content-wrapper-div',function(){
+                              //alert($(this).index()-2)
+                            window.location.href = "yongxindingjiamingxidan.html?data=" + escape(JSON.stringify(r.result[$(this).index()-2]));
+                        })
+
+					}else{
+						alert(r.message);
+					}
+				},error:function(r){
+					alert('用户没有权限！');
+				}
+			});
+
+
+        });
+    </script>
+</html>

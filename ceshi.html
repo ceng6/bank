@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+                 <label class="label-13 zr_duiqi1">
+                                        起&nbsp&nbsp&nbsp&nbsp息&nbsp&nbsp&nbsp&nbsp日&nbsp&nbsp：<input class="meeting zr_duiqi2" id="qxr" type="date" value="2017-01-13" style="width: 166px;" />
+                                        </label></br>
+            <label class="label-9 zr_duiqi1">
+            期&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp限&nbsp：<input class="zr_duiqi2" type="text" id="qx" value="" name="id" placeholder="" required />
+            </label></br>
+
+            <label id="lblSelect" class="label-10 zr_duiqi1">
+            期&nbsp&nbsp&nbsp限&nbsp&nbsp单&nbsp&nbsp位：
+            <select class="selectPointOfInterest zr_duiqi2" id="qxdw" title="Select points of interest nearby">
+                  <option>--请选择--</option>
+                  <option value="D">日</option>
+                  <option value="M">月</option>
+                  <option value="Y">年</option>
+            </select>
+            </label></br>
+    <input type="button" name="" value="点击" id="btn">
+</body>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+
+       $("#btn").click(function(){
+          var arr =$("#qxr").val().split('-');   //日期切分
+          var re=$("#qx").val();      //  期限 类型字符串
+          var list=$("#qxdw").val();  //期限单位
+          var data=new Date();
+          var year=data.getFullYear();
+          var mon = data.getMonth()+1;
+          var day = data.getDate();
+          var res =parseInt(re);    //数字类型的期限
+              switch(list){
+                case "D":
+                               res+=day
+                               data= year+Math.floor((res)/365)
+                               res%=365;
+                          if(mon%2==1){
+                               mon=mon+Math.floor(res/32);
+                               data=data+Math.floor(mon/12);
+                               mon%=12;
+                               if(res>=32 && ((res+1)%32)!=0){
+                                  res+=1
+                               }
+                               res=Math.floor(res%32);
+                               day=res;
+                             };
+                          if(mon%2==0 && mon!=2){
+                               mon=mon+Math.floor(res/31);
+                               data=data+Math.floor(mon/12);
+                               mon%=12;
+                               if(res>=31 && (res+1)%31!=0){
+                                  res+=1
+                               }
+                               res=Math.floor(res%31);
+                               day=res;
+                          }
+                          if(mon==2){
+                               mon=mon+Math.floor(res/29);
+                               data=data+Math.floor(mon/12);
+                               mon%=12;
+                               if(res>=29 && (res+1)%29!=0){
+                                  res+=1
+                               }
+                               res=Math.floor(res%29);
+                               day=res;
+                            }
+                            alert(data+','+mon+','+day)
+                break;
+                case "M":
+                  res=res+mon;
+                  data = year+Math.floor(res/12);
+                  res=res%13;
+                  mon=res;
+                  alert(data+','+mon+','+day);
+                break;
+                default:
+              }
+            })
+
+})
+</script>
+</html>

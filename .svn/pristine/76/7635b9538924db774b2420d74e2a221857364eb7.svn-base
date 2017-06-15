@@ -1,0 +1,159 @@
+{
+	"index.html": {
+		"resources": [
+			"js/cookie.js",
+			"assets/js/jquery-1.8.2.min.js",
+			"assets/img/logo.png",
+			"assets/js/scripts.js",
+			"assets/css/style.css",
+			"assets/css/reset.css",
+			"assets/js/index.js",
+			"assets/css/supersized.css",
+			"shouye.html"
+		],
+		"refer": [
+			"shouye.html"
+		]
+	},
+	"shouye.html": {
+		"resources": [
+			"img/icons/20091003100600651.png",
+			"js/main.js",
+			"img/icons/search-submit.png",
+			"img/icons/search.png",
+			"img/icons/arrow-forward.png",
+			"js/public.js",
+			"img/img1/grdkdj.png",
+			"css/style.css",
+			"img/img1/microLoan.png",
+			"img/icons/submenu.png",
+			"img/icons/menu.png",
+			"img/icons/20091003100600325.png",
+			"img/icons/20091003100559341.png",
+			"img/img1/bbfx.png",
+			"img/icons/20091003100600258.png",
+			"img/img1/xwdkdj.png",
+			"js/jquery-2.0.3.min.js",
+			"css/flexslider.css",
+			"js/jquery.flexslider-min.js",
+			"img/icons/dot.png",
+			"img/img1/xtgl.png",
+			"daikuanshisuan.html",
+			"gerendaikuan.html",
+			"kehuxinxi.html"
+		],
+		"refer": [
+			"daikuanshisuan.html",
+			"gerendaikuan.html",
+			"kehuxinxi.html"
+		]
+	},
+	"daikuanshisuan.html": {
+		"resources": [
+			"img/img1/shang.png",
+			"gerendaikuan.html",
+			"kehuxinxi.html",
+			"cunkuandingjia.html",
+			"img/icons/20091003100600651.png",
+			"js/main.js",
+			"img/icons/search-submit.png",
+			"img/icons/search.png",
+			"img/icons/arrow-forward.png",
+			"js/public.js",
+			"img/img1/grdkdj.png",
+			"css/style.css",
+			"img/img1/microLoan.png",
+			"img/icons/submenu.png",
+			"img/icons/menu.png",
+			"img/icons/20091003100600325.png",
+			"js/cookie.js",
+			"img/icons/20091003100559341.png",
+			"img/img1/bbfx.png",
+			"img/icons/20091003100600258.png",
+			"img/img1/xwdkdj.png",
+			"js/jquery-2.0.3.min.js",
+			"img/icons/dot.png",
+			"img/img1/xtgl.png"
+		],
+		"refer": [
+			"gerendaikuan.html",
+			"kehuxinxi.html",
+			"cunkuandingjia.html"
+		]
+	},
+	"cunkuandingjia.html": {
+		"resources": [
+			"js/grid.js",
+			"css/portfolio-default.css",
+			"js/modernizr.custom.js",
+			"css/portfolio-component.css",
+			"daikuanshisuan.html",
+			"gerendaikuan.html"
+		],
+		"refer": [
+			"daikuanshisuan.html",
+			"gerendaikuan.html"
+		]
+	},
+	"gerendaikuan.html": {
+		"resources": [
+			"cunkuandingjia.html",
+			"img/icons/20091003100600651.png",
+			"js/main.js",
+			"img/icons/search-submit.png",
+			"img/icons/search.png",
+			"img/icons/arrow-forward.png",
+			"js/public.js",
+			"img/img1/grdkdj.png",
+			"css/style.css",
+			"img/img1/microLoan.png",
+			"img/icons/submenu.png",
+			"img/icons/menu.png",
+			"img/icons/20091003100600325.png",
+			"js/cookie.js",
+			"img/icons/20091003100559341.png",
+			"img/img1/bbfx.png",
+			"img/icons/20091003100600258.png",
+			"img/img1/xwdkdj.png",
+			"js/jquery-2.0.3.min.js",
+			"js/jquery.flexslider-min.js",
+			"img/icons/dot.png",
+			"img/img1/xtgl.png",
+			"daikuanshisuan.html",
+			"shouye.html"
+		],
+		"refer": [
+			"cunkuandingjia.html",
+			"daikuanshisuan.html",
+			"shouye.html"
+		]
+	},
+	"kehuxinxi.html": {
+		"resources": [
+			"daikuanshisuan.html",
+			"shouye.html",
+			"gerendaikuan.html"
+		],
+		"refer": [
+			"daikuanshisuan.html",
+			"shouye.html",
+			"gerendaikuan.html"
+		]
+	},
+	"zhongjianyewu.html": {
+		"resources": [
+			"cunkuanyewu.html"
+		],
+		"refer": [
+			"cunkuanyewu.html"
+		]
+	},
+	"cunkuanyewu.html": {
+		"resources": [
+			"daikuanyewu.html"
+		],
+		"refer": [
+			"daikuanyewu.html"
+		]
+	}
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>个人贷款定价</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+	<style type="text/css">
+		.zr_duiqi1{
+			width: 300px;display: inline-block;!important
+
+		}
+		.zr_duiqi1>.zr_duiqi2{
+			float: right;margin-right: 20px ;!important
+		}
+		label#lblSelect.zr_duiqi1::after{margin-right: 20px;}
+		input#checkbox.xuankuang{
+			padding-top: 10px;
+		}
+	</style>
+    <!-- [loading scripts] -->
+
+
+    <script type="text/javascript">
+           /* var $ = jQuery.noConflict();
+            $(window).load(function() {
+                $('#slider').flexslider({
+                    animation: "slide",
+                    directionNav: true,
+                    animationLoop: false,
+                    controlNav: false,
+                    slideToStart: 1,
+                    slideshow: true,
+                    animationDuration: 300,
+                    start: function(){
+                         $('#slider').animate({opacity: 1}, 750);
+                    },
+                });
+            });*/
+      </script>
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+
+              <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>个人贷款定价</h1>
+                    </div>
+
+
+                </section> <!-- #header -->
+
+        	<section id="content">
+
+                <div class="wrapper wrapper-divge">
+                <form action="#" method="get">
+                    <div class="wrapper-div-form1">
+                        <h2>客户信息</h2>
+                        <!-- <form action="#" method="get"> -->
+                            <div class="wrapper-form-div">
+                            <label class="zr_duiqi1">
+                               客&nbsp户&nbsp号&nbsp：<input class="zr_duiqi2" type="text" id="khh" value="" name="id" placeholder="客户号*" required />
+                            </label></br>
+                            <label class="zr_duiqi1">
+                            客户名称：<input class="zr_duiqi2" type="text" id="khmc" value="" name="name" placeholder="客户名称*" required /></label>
+                            </br>
+                            <label for="sex" style="display: inline-block; margin-bottom: 9px;" >
+                             性&nbsp&nbsp&nbsp&nbsp&nbsp别&nbsp&nbsp：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>男</span><span><input type="radio" value="5337" id="checkbox1" class="xuankuang" name="sex"/></label>
+                             <label for="checkbox">
+                             <span style="margin-left: 25px;">女</span><input type="radio" id="checkbox2" value="5338" class="xuankuang" name="sex"/>
+                             </label></br>
+                                <label id="lblSelect" class="zr_duiqi1">
+                                    信用等级：<select class="zr_duiqi2 selectPointOfInterest" id="xydj" title="Select points of interest nearby">
+										<option value="">-----请选择-----</option>
+										<option value="AAA">AAA级客户</option>
+										<option value="AA">AA级客户</option>
+										<option value="A">A级客户</option>
+										<option value="BBB">BBB级客户</option>
+										<option value="BB">BB级客户</option>
+										<option value="B">B级客户</option>
+                                    </select>
+                                </label></br>
+                                <label id="lblSelect" class="zr_duiqi1">
+                                    证件类型：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="zjlx">
+                                       <option value="">-----请选择-----</option>
+									   <option value="IDENTIFYID">身份证</option>
+									   <option value="PASSPORT">护照</option>
+									   <option value="ENSUREID">社会保障号</option>
+									   <option value="OTHERS">其他</option>
+                                    </select>
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                    证件号码：<input class="zr_duiqi2" type="text" value="" name="name" placeholder="证件号码*" required id="zjhm" />
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                    固定电话：<input class="zr_duiqi2 list" type="text" value="" name="tTel" placeholder="联系电话*"  id="lxdh" />
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                     移动电话：<input class="zr_duiqi2 list" type="text" value="" name="tPhone" placeholder="移动电话*" required id="yddh" />
+                                </label></br>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>贷款信息</h2>
+                        <!-- <form action="#" method="get"> -->
+                            <div class="wrapper-form-div">
+                                <label id="lblSelect" class="zr_duiqi1">
+                                    产品名称：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="cpmc">
+                                        <option value="">-----请选择-----</option>
+										<option value="000002">住房按揭贷款</option>
+										<option value="404">短期农业经济组织保证贷款</option>
+										<option value="405">短期农村工商业信用贷款</option>
+										<option value="406">短期农村工商业保证贷款</option>
+										<option value="410">中长期农户保证贷款</option>
+										<option value="421">生源地助学贷款</option>
+										<option value="422">其他助学贷款</option>
+										<option value="423">短期农户抵押贷款</option>
+										<option value="424">中长期农户抵押贷款</option>
+										<option value="436">短期农户质押贷款</option>
+										<option value="456">营运汽车按揭贷款</option>
+                                    </select>
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                    机&nbsp构&nbsp名&nbsp：<input class="zr_duiqi2" type="text" id="jgmc1" value="" name="id" placeholder="Q联社，B县社*" required style="padding:4px;" />
+                                </label></br>
+                               <label id="lblSelect" class="zr_duiqi1">
+                                使用币种：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="sybz">
+										<option value="">-----请选择-----</option>
+										<option value="CNY" selected="">人民币</option>
+										<option value="USD">美元</option>
+										<option value="EUR">欧元</option>
+										<option value="HKD">港币</option>
+                                </select>
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                    贷&nbsp款&nbsp额&nbsp：<input class="zr_duiqi2 list" type="text" value="" name="tMoney" placeholder="贷款额(元)*" required id="dkje" />
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                    期&nbsp&nbsp&nbsp&nbsp限&nbsp&nbsp：<input class="zr_duiqi2 list" type="text" value="" name="tData" placeholder="还款期限(月)*" required id="hkqx" />
+                                </label></br>
+                                <label class="zr_duiqi1">
+                                  起&nbsp息&nbsp日：
+                                    <input class="zr_duiqi2 meeting" id="qxr" type="date" value="2017-01-13" style="width: 167px;" />
+                                </label></br>
+                            <label id="lblSelect" class="zr_duiqi1 ">
+                            利率特性：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="lvtx">
+										<option value="">-----请选择-----</option>
+										<option value="GDLL">固定利率</option>
+										<option value="FDLL">浮动利率</option>
+                                </select>
+                                </label></br>
+                            <label id="lblSelect" class="zr_duiqi1">
+                            利率调整周期(月)：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="lvtzzq">
+										<option value="">-----请选择-----</option>
+										<option value="1">1M</option>
+										<option value="3">3M</option>
+										<option value="6">6M</option>
+										<option value="12">12M</option>
+                                </select>
+                                </label></br>
+                            </div>
+                            <!-- <input type="submit" value="提交" /> -->
+                        <!-- </form> -->
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>还款方式</h2>
+                        <!-- <form action="#" method="get"> -->
+                            <div class="wrapper-form-div">
+                                <label id="lblSelect" class="zr_duiqi1">
+                                还款方式：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="hkfs">
+										<option value="">-----请选择-----</option>
+										<option value="DEBJ">等额本金</option>
+										<option value="DEBX">等额本息</option>
+										<option value="DQHBFCFX">到期还本分次付息</option>
+										<option value="DQYCHBFX">到期一次还本付息</option>
+										<option value="HKJH">还款计划</option>
+                                    </select>
+                                    </label></br>
+                                <label id="lblSelect" class="zr_duiqi1">
+                                还款频率：<select class="zr_duiqi2 selectPointOfInterest" title="Select points of interest nearby" id="hkpl">
+										<option value="">-----请选择-----</option>
+										<option value="1">1 月</option>
+										<option value="3">3 月</option>
+										<option value="6">6 月</option>
+										<option value="12">12 月</option>
+                                    </select>
+                                    </label></br>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>抵押品信息</h2>
+
+                            <div class="wrapper-form-div" style="margin-left: 0;position: initial;">
+
+                                <textarea name="message" placeholder="暂无信息*" required style="position: initial;background: #fff;"></textarea></br>
+                                <!-- <input type="button" value="新增" class="wrapper-div-form1-btn1" /> -->
+                            </div>
+                            <input type="submit" id="grdkSubmit" value="提交" class="wrapper-div-form1-btn1" style="margin-left: 25%;" />
+
+                    </div>
+                </form>
+				</div>
+
+            <div class="content-wrapper-loan">
+
+            </div>
+
+            </section> <!-- #content -->
+
+            </section> <!-- #content-wrapper -->
+            <div class="wrapper-kong"></div>
+    	</section> <!-- #page-wrapper -->
+        <div class="houtai-footer1"></div>
+        <div class="houtai-footer">
+            <ul class="houtai-box">
+
+            </ul>
+        </div>
+    </body>
+     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/foot.js"></script>
+	<script>
+	$(function(){
+     /*       $.each($(".list"),function(i,v){
+                alert($(this).val())
+                  if($(this).name){
+                        if(oReg[v.name].test($(this).val())){
+                            $(this).css('border','2px solid green')
+
+                        }else{
+                             $(this).css('border','2px solid red');
+                             alert("请规范填写信息")
+                             switch2=false;
+                        }
+                  }
+
+                })
+*/
+        if(GetQueryString("cust_id")){
+			$("#khh").val(GetQueryString("cust_id"));
+		}
+		if(GetQueryString("cust_name")){
+			$("#khmc").val(GetQueryString("cust_name"));
+		}
+		if(GetQueryString("ci_cust_level")){
+			$("#xydj").val(GetQueryString("ci_cust_level"));
+		}
+		//点击弹出客户选择
+		$("#khh").click(function(){
+			window.open('kehuhao.html?parent="gerendaikuan"','_parent');
+		});
+		$("#grdkSubmit").click(function(){
+
+
+
+        	var params = getCommonParams(document.cookie);
+                params.class = "normalLoanPricingCalculateQuery";
+                params.personal_loan_info = {
+					"custId":$("#khh").val(),						//客户号
+					"custName":$("#khmc").val(),				//客户名称
+					"custSex":$('input[name="sex"]:checked').val(),				//性别
+					"custCiLevelCode":$("#xydj option:selected").text(),		//信用评级名称
+					"certificateType":$("#zjlx option:selected").val(),		//证件类型
+					"certificateNumber":$("#zjhm").val(),	    //证件号码
+					"phone":$("#lxdh").val(),					//联系电话
+					"telephone":$("#yddh").val(),
+                    //移动电话
+					"loanProductCode":$("#cpmc option:selected").val(),			//产品名称
+					"organization":"86003",    						//机构名
+					"loanCurrencyCode":$("#sybz option:selected").val(),		//使用币种
+					"loanMoney":$("#dkje").val(),						//贷款金额
+					"loanTermdetail":$("#hkqx").val(),						//期限
+					"homeValueDate":$("#qxr").val(),			//起息日
+					"loanInterestCode":$("#lvtx option:selected").val(),		//利率特性
+					"interest_rate_adjustment_period":$("#lvtzzq option:selected").val(),
+                    //利率调整周期
+					"repaymentTypeCode":$("#hkfs option:selected").val(),		//还款方式
+					"loanTermdetailUnitCode":"M",					//期限单位
+					"repaymentFrequencyCode":$("#hkpl option:selected").val()	//还款频率
+			}
+                //alert("$(input[type=text]").length)
+            var list=params.personal_loan_info;
+			$.ajax({
+				url:port,
+				data:params,
+				dataType:'json',
+				cache:false,
+				success:function(r){
+                    if (r.status){
+    					debugger;
+                        var oReg = {
+                                tTel:/^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/,
+                                tPhone:/^1[34578]\d{9}$/,
+                                tMoney:/^[1-9][0-9]*$/,
+                                tData:/^(0?[1-9]|1[0-2])$/
+                        };
+                        var reJson2={
+                                IDENTIFYID:/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/,
+                                PASSPORT:/^[a-zA-Z]{5,17}|[a-zA-Z0-9]{5,17}$/
+                                    };
+                        var flag=true;
+                        $.each($(".list"),function(i,v){
+
+                                 if(oReg[v.name].test($(this).val())){
+                                        $(this).css("border-color","green")
+                                    }else{
+                                         $(this).css("border-color","red");
+                                         alert("请规范填写信息");
+                                           flag=false;
+                                    }
+                                    return flag;
+                            })
+                        for(var name in reJson2){
+                                        if(reJson2[$("#zjlx option:selected").val()].test($("#zjhm").val())){
+                                            $("#zjhm").css("border-color","green");
+
+                                        }else{
+                                             $("#zjhm").css("border-color","red");
+                                             alert("证件号码有误");
+                                             return false;
+                                         }
+                            }
+                        if(flag){
+                         window.location.href = "persnshisuanjieguo.html?data=" + escape(JSON.stringify(r.result[0]))+"&info="+escape(JSON.stringify(list));
+                        }
+
+					}else{
+						alert(r.message);
+					}
+				},error:function(r){
+					alert('用户没有权限！');
+				}
+			});
+		});
+	})
+	</script>
+</html>

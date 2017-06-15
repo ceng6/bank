@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+                 <label class="label-13 zr_duiqi1">
+                                        起&nbsp&nbsp&nbsp&nbsp息&nbsp&nbsp&nbsp&nbsp日&nbsp&nbsp：<input class="meeting zr_duiqi2" id="qxr" type="date" value="2017-01-13" style="width: 166px;" />
+                                        </label></br>
+            <label class="label-9 zr_duiqi1">
+            期&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp限&nbsp：<input class="zr_duiqi2" type="text" id="qx" value="" name="id" placeholder="" required />
+            </label></br>
+
+            <label id="lblSelect" class="label-10 zr_duiqi1">
+            期&nbsp&nbsp&nbsp限&nbsp&nbsp单&nbsp&nbsp位：
+            <select class="selectPointOfInterest zr_duiqi2" id="qxdw" title="Select points of interest nearby">
+                  <option>--请选择--</option>
+                  <option value="D">日</option>
+                  <option value="M">月</option>
+                  <option value="Y">年</option>
+            </select>
+            </label></br>
+    <input type="button" name="" value="点击" id="btn">
+</body>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+       $("#btn").click(function(){
+          var arr =$("#qxr").val().split('-');   //日期切分
+          var re=$("#qx").val();      //  期限 类型字符串
+          var list=$("#qxdw").val();  //期限单位
+          var data=new Date();
+          var year=data.getFullYear();
+          var mon = data.getMonth()+1;
+          var day = data.getDate();
+          var res =parseInt(re);    //数字类型的期限
+          var data1=new Date(data);
+              switch(list){
+                case "D":
+                      data1.setDate(data.getDate()+res);
+                      alert(data1.getFullYear()+','+(data1.getMonth()+1)+','+data1.getDate());
+                break;
+                case "M":
+                      data1.setMonth(data.getMonth()+res);
+                      alert(data1.getFullYear()+','+(data1.getMonth()+1)+','+data1.getDate());
+                break;
+                default:
+                      data1.setYear(data.getFullYear()+res);
+                      alert(data1.getFullYear()+','+(data1.getMonth()+1)+','+data1.getDate());
+              }
+            })
+})
+</script>
+</html>

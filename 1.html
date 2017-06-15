@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<style>
+      {margin:0;padding:0;}
+    ul{width:185px;}
+    ul{list-style:none;margin-left:15px;z-index:1000;}
+    ul li{list-style:none;margin:10px;display: none;}
+
+</style>
+</head>
+<body>
+    使用币种:<input type="text" name="" value="" placeholder="" id="btn">
+                <ul>
+                </ul>
+
+
+</body>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+            function search(){
+                   if($("#btn").val().length==0){
+                       $("li").hide();
+                   }else{
+                        $("li").hide().filter(":contains('"+$("#btn").val()+"')").show();
+
+                   }
+            }
+            $("#btn").on('keyup',function(){
+                search();
+            });
+        $.ajax({
+                url:"a.txt",
+                dataType:'json',
+                cache:false,
+                success:function(r){
+                    console.log(r)
+                   if (r.status){
+                        $.each(r.result,function(i,v){
+                            $('<li id="${v.name}">'+v.val+'</li>').appendTo('ul');
+                      });
+                    }
+                },error:function(r){
+                    alert('用户没有权限！');
+                }
+            });
+
+            $("ul").on("click","li",function(){
+                alert(1)
+            })
+
+        });
+
+</script>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>天津金城</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" type="text/css" href="css/jPages.css">
+
+    <!-- [loading scripts] -->
+
+
+    <script type="text/javascript">
+    /*        var $ = jQuery.noConflict();
+            $(window).load(function() {
+                $('#slider').flexslider({
+                    animation: "slide",
+                    directionNav: true,
+                    animationLoop: false,
+                    controlNav: false,
+                    slideToStart: 1,
+                    slideshow: true,
+                    animationDuration: 300,
+                    start: function(){
+                         $('#slider').animate({opacity: 1}, 750);
+                    },
+                });
+            });*/
+    </script>
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+
+               <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+        	<div id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                            <img src="img/icons/menu.png" alt="menu" />
+                        </a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>客户信息</h1>
+                    </div>
+
+                </section> <!-- #header -->
+                <!--搜索框-->
+                <div class="search bar7">
+                     <form>
+                        <input type="text" id="dat" placeholder="输入客户名称/客户号" class="text1" />
+                        <input type="button" value="搜索" class="search-bar7-form-btn" id="btn" />
+                    </form>
+                </div>
+                <div id="box">
+                </div>
+                <div id="holder">
+                </div>
+            </div> <!-- #content-wrapper -->
+
+
+
+        <!-- #page-wrapper -->
+        <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div><!--回到顶部-->
+
+  <!--       <div class="houtai-footer">
+      <ul class="houtai-box">
+
+      </ul>
+  </div> -->
+    </section>
+    </body>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/foot.js"></script>
+    <script type="text/javascript" src="js/jPages.js"></script>
+     <script>
+
+        $(function (){
+
+            var params = getCommonParams(document.cookie);
+            params.class = "cutomerInfoList";
+            params.cust_type="CREDIT";
+
+            function search(){
+                   if($("#dat").val().length==0){
+                        $(".content-wrapper-div").show();
+                   }else{
+                        $(".content-wrapper-div").hide().filter(":contains('"+$("#dat").val()+"')").show();
+
+                   }
+            }
+            $("#btn").click(function(){
+                search();
+            });
+            $("#dat").on('keyup',function(){
+                search();
+            });
+            $(".content-wrapper-div").on('')
+            $.ajax({
+                url:port,
+                data:params,
+                dataType:'json',
+                cache:false,
+                success:function(r){
+                    if (r.status){
+                        /*debugger;*/
+                        $.each(r.result,function(i,v){
+                            $('<div class="content-wrapper-div">'
+                                +'<a href="#">'
+                                    +'<ul>'
+                                        +'<li>客户名称：<span>'+v.cust_name+'</span></li>'
+                                        +'<li>客户号：<span>'+v.cust_id+'</span></li>'
+                                        +'<li>客户分类：<span>'+v.cust_classified_name+'</span></li>'
+                                        +'<li>客户规模：<span>'+v.ci_cust_scale_name+'</span></li>'
+                                        +'<li>信用等级：<span>'+v.ci_cust_level+'</span></li>'
+                                        +'<li>行业：<span>'+v.industry_name+'</span></li>'
+                                        +'<li>贷款日均余额：<span>'+v.fci_l12_dep_avg_bal+'</span></li>'
+                                        +'<li>存款日均余额：<span>'+v.fci_l12_ln_avg_bal+'</span></li>'
+                                        +'<li>净收入：<span>'+v.fcc_ni+'</span></li>'
+                                        +'<li>经济增加值：<span>'+v.fcc_eva_total+'</span></li>'
+                                    +'</ul>'
+                                +'</a>'
+                            +'</div>').appendTo('#box');
+                        });
+                         var isFocus=$("#dat").is(":focus");
+                    if(true==isFocus){
+                        $(".content-wrapper-div").show();
+                    }else{
+                        $(".content-wrapper-div").hide().filter(":contains('"+$("#dat").val()+"')").show();
+                    }
+                        $("div#holder").jPages({
+                              containerID: "box",
+                              perPage:4,
+                              callback:function(pages,items){
+                                if($("div.content-wrapper-div").length>Math.ceil(items.count/pages.count)){
+                                        /*$("div.content-wrapper-div:gt(3)").remove()*/
+                                     $("#box").removeChild();
+                                    }
+                                }
+                        });
+
+
+
+                        //window.location.href = "cunkuanyewu.html?data=" + escape(JSON.stringify(r.result));
+                    }else{
+
+                        alert(r.message);
+                    }
+
+                },error:function(r){
+                    alert('用户权限不够！');
+                }
+            });
+
+
+
+        });
+     </script>
+</html>
